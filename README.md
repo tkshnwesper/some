@@ -26,7 +26,7 @@ possibly_nil : String | Nil
 possibly_nil = "Hello"
 
 Some.new(possibly_nil).fmap do |definitely_not_nil|
-  puts "#{definitely_not_nil}! Greetings, young 'un!"
+  puts "#{definitely_not_nil}! Greetings, young 'un!" # gets executed as expected!
 end
 
 possibly_nil = nil
