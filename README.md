@@ -7,7 +7,7 @@ Inspired by `Option.map` in Scala.
 ```crystal
 /\d+/.match("n1.txt").fmap do |match_data|  # => (MatchData | Nil)
   match_data[0].fmap do |level_str|         # => (String | Nil)
-    level_str.to_i32                        # => "1"
+    level_str.to_i32                        # => 1
   end
 end
 ```
