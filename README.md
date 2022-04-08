@@ -5,13 +5,10 @@ Inspired by `Option.map` in Scala.
 `unless var.nil?`, but as a block. Might save a few lines ;)
 
 ```crystal
-def self.get_level(file_name : String) : Int32
-  /\d+/.match(file_name).fmap do |match_data|
-    match_data[0].fmap do |level_str|
-      level_str.to_i32
-    end
-  end ||
-    raise "Level could not be found"
+/\d+/.match("n1.txt").fmap do |match_data|  # => (MatchData | Nil)
+  match_data[0].fmap do |level_str|         # => (String | Nil)
+    level_str.to_i32                        # => "1"
+  end
 end
 ```
 
